@@ -1,2 +1,8 @@
 @extends('layouts.master')
-<h1>Some Content</h1>
+
+@section('content')
+   <div>
+   <h1>Some content</h1>
+   <p>{{"Hello"}}</p>
+   </div>
+@endsection
