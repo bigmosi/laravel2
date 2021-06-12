@@ -27,7 +27,7 @@ Route::get('post/{id}', function ($id) {
             'content' => 'Some other content'
         ];
     }
-    return $post['title'];
+    return view('blog.post', ['post' => $post ]);
 })->name('blog.post');
 
 Route::get('about', function () {
@@ -49,17 +49,17 @@ Route::group(['prefix' => 'admin'], function() {
 
     Route::get('edit/{id}', function ($id) {
         if($id == 1) {
-            $post = [
+            $post=[
                 'title' => 'Learning Laravel',
                 'content' => 'This blog post will get you right on track with Laravel!'
             ];
         }else {
-            $post = [
+            $post=[
                 'title' => 'Something else',
                 'content' => 'Some other content'
             ];
         }
-        return view('admin.edit');
+        return view('admin.edit',['post' => $post ]);
     })->name('admin.edit');
 
     Route::post('edit', function() {
