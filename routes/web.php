@@ -43,15 +43,15 @@ Route::group(['prefix' => 'admin'], function() {
         return view('admin.create');
     })->name('admin.create');
 
-    Route::post('create', function(\Illuminate\Http\Request $request, \Illuminate\Validation\Factory $validator) {
-        $validation = $validator->make($request->all(), [
-            'title' => 'required|min:5',
-            'content' => 'required|min:10'
-        ]);
-        if($validation->fails()){
-            return redirect()->back()->withErrors($validation);
+    Route::post('create', function(\Illuminate\Http\Request $request,\Illuminate\Validation\Factory $validator) {
+        $validation=$validator->make($request->all(), [
+            'title' => 'required | min:5',
+            'content' => 'required | min:10'
+             ]);
+        if($validation->fails()) {
+            return redirect()->back()->withErrors( $validation );
         }
-        return redirect()->route('admin.index')->with( 'info', 'post created, new Title:' . $request->input('title') );
+        return redirect()->route('admin.index')->with( 'info', 'post created, new Title:' .$request->input('title') );
     })->name('admin.create');
 
     Route::get('edit/{id}', function ($id) {
