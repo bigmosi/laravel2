@@ -44,7 +44,7 @@ Route::group(['prefix' => 'admin'], function() {
     })->name('admin.create');
 
     Route::post('create', function() {
-        return "It works";
+        return "It works!";
     })->name('admin.create');
 
     Route::get('edit/{id}', function ($id) {

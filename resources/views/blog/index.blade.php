@@ -2,7 +2,7 @@
 @section('content')
     <div class="row">
         <div class="col-md-12 text-center">
-            <p class="quote text-center"><h1>The beautiful Laravel<h1></p>
+            <p class="quote"><h1>The beautiful Laravel<h1></p>
         </div>
     </div>
     <div class="row">
